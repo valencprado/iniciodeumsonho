@@ -6,6 +6,8 @@ public class InicioDeUmSonho {
 
     public static void main(String[] args) {
 
+        JOptionPane.showMessageDialog(null, "Boas vindas ao Sistema do Restaurante Flamboyant!", "Mensagem", JOptionPane.INFORMATION_MESSAGE);
+
         String menuInicial = "";
         while (!(menuInicial.equals("0")
                 || menuInicial.equals("1")
@@ -18,20 +20,20 @@ public class InicioDeUmSonho {
                     + "3- Alterar  \n"
                     + "4- Excluir  \n"
                     + "0- Finalizar");
-            JOptionPane.showMessageDialog(null, "A opção escolhida é: " + menuInicial);
+           // JOptionPane.showMessageDialog(null, "A opção escolhida é: " + menuInicial);
         }
         switch (menuInicial) {
             case "1":
-                JOptionPane.showMessageDialog(null, "A opção escolhida é Cadastrar");
+                JOptionPane.showMessageDialog(null, "A opção escolhida é: Cadastrar");
                 break;
             case "2":
-                JOptionPane.showMessageDialog(null, "A opção escolhida é Consultar");
+                JOptionPane.showMessageDialog(null, "A opção escolhida é: Consultar");
                 break;
             case "3":
-                JOptionPane.showMessageDialog(null, "A opção escolhida é Alterar");
+                JOptionPane.showMessageDialog(null, "A opção escolhida é: Alterar");
                 break;
             case "4":
-                JOptionPane.showMessageDialog(null, "A opção escolhida é Excluir");
+                JOptionPane.showMessageDialog(null, "A opção escolhida é: Excluir");
                 break;
             default:
                 break;
