@@ -1,19 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package iniciodeumsonho;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author valen
- */
 public class Produto {
-
     String NomeProduto;
     int CodProduto;
     static ArrayList<Produto> arrayProduto = new ArrayList();
@@ -33,27 +23,30 @@ public class Produto {
 
     static void consultaProduto() 
     {
-        JOptionPane.showMessageDialog(null, "Nome" + Produto.arrayProduto.get(indice).NomeProduto
-                + "\n Código" + Produto.arrayProduto.get(indice).CodProduto);
-
+        JOptionPane.showMessageDialog(
+            null,
+            "Nome: " + Produto.arrayProduto.get(indice).NomeProduto + "\n"
+            + "Código: " + Produto.arrayProduto.get(indice).CodProduto);
     }
 
     static void consultaParaAlterar() {
-        op = JOptionPane.showInputDialog(null,
-                "Nome: " + Produto.arrayProduto.get(indice).NomeProduto
-                + "Código"
-                + "O que deseja alterar? \n"
-                + "1- Nome \n"
-                + "2- Código");
-        if (op.equals(1)) {
-            JOptionPane.showInputDialog("Digite o nome do produto.");
-            indice = -1;//diminui o índice pra não ir pro último espaço do vetor
+        op = JOptionPane.showInputDialog(
+            null,
+            "Nome: " + Produto.arrayProduto.get(indice).NomeProduto + "\n"
+            + "Código\n"
+            + "O que deseja alterar?\n"
+            + "1- Nome\n"
+            + "2- Código"
+        );
 
+        if (op.equals("1")) {
+            JOptionPane.showInputDialog("Digite o nome do produto.");
+
+            //diminui o índice pra não ir pro último espaço do vetor
+            indice = -1;
         }
     }
 
-    static void Excluir() 
-    {
+    static void Excluir() {
     }
-
 }
