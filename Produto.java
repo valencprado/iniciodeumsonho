@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Produto {
+
     String NomeProduto;
     int CodProduto;
     static ArrayList<Produto> arrayProduto = new ArrayList();
@@ -11,8 +12,7 @@ public class Produto {
     static String op;
     static int TotalProduto;
 
-    public static void cadastraProduto() 
-    {
+    public static void cadastraProduto() {
         Produto p1 = new Produto();
 
         String NomeProduto = JOptionPane.showInputDialog("Digite o nome do produto.");
@@ -21,22 +21,33 @@ public class Produto {
 
     }
 
-    static void consultaProduto() 
-    {
-        JOptionPane.showMessageDialog(
-            null,
-            "Nome: " + Produto.arrayProduto.get(indice).NomeProduto + "\n"
-            + "Código: " + Produto.arrayProduto.get(indice).CodProduto);
+    static void consultaProduto() {
+        int codigo = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto."));
+        Produto produtoAchado = null;
+        for (Produto p : Produto.arrayProduto) {
+            if (p.CodProduto == codigo) {
+                produtoAchado = p;
+                break;
+            }
+        }
+        if (produtoAchado == null) {
+            JOptionPane.showMessageDialog(null, "Não foi possível encontrar!");
+        } else {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Nome: " + produtoAchado.NomeProduto + "\n"
+                    + "Código: " + produtoAchado.CodProduto);
+        }
     }
 
     static void consultaParaAlterar() {
         op = JOptionPane.showInputDialog(
-            null,
-            "Nome: " + Produto.arrayProduto.get(indice).NomeProduto + "\n"
-            + "Código\n"
-            + "O que deseja alterar?\n"
-            + "1- Nome\n"
-            + "2- Código"
+                null,
+                "Nome: " + Produto.arrayProduto.get(indice).NomeProduto + "\n"
+                + "Código\n"
+                + "O que deseja alterar?\n"
+                + "1- Nome\n"
+                + "2- Código"
         );
 
         if (op.equals("1")) {
