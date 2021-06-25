@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Produto {
-
     String NomeProduto;
     int CodProduto;
     static ArrayList<Produto> arrayProduto = new ArrayList();
@@ -15,10 +14,10 @@ public class Produto {
     public static void cadastraProduto() {
         Produto p1 = new Produto();
 
-        String NomeProduto = JOptionPane.showInputDialog("Digite o nome do produto.");
-        int CodProduto = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto."));
-        arrayProduto.add(p1);
+        p1.NomeProduto = JOptionPane.showInputDialog("Digite o nome do produto.");
+        p1.CodProduto = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto."));
 
+        arrayProduto.add(p1);
     }
 
     static void consultaProduto() {
