@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Produto {
+
     String NomeProduto;
     int CodProduto;
     static ArrayList<Produto> arrayProduto = new ArrayList();
@@ -16,8 +17,8 @@ public class Produto {
 
         p1.NomeProduto = JOptionPane.showInputDialog("Digite o nome do produto.");
         p1.CodProduto = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto."));
-
         arrayProduto.add(p1);
+
     }
 
     static void consultaProduto() {
@@ -58,5 +59,18 @@ public class Produto {
     }
 
     static void Excluir() {
+        int codigo = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto."));
+        Produto produtoAchado = null;
+        for (Produto p : Produto.arrayProduto) {
+            if (p.CodProduto == codigo) {
+                produtoAchado = p;
+                break;
+            }
+        }
+        if (produtoAchado == null) {
+            JOptionPane.showMessageDialog(null, "Não foi possível encontrar!");
+        } else {
+            Produto.arrayProduto.remove(produtoAchado);
+        }
     }
 }
