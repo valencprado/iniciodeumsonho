@@ -48,6 +48,7 @@ public class InicioDeUmSonho {
                     Produto.Excluir();
                     break;
                 default:
+                    System.exit(0);
                     break;
             }
 
