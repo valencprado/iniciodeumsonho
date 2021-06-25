@@ -41,21 +41,30 @@ public class Produto {
     }
 
     static void consultaParaAlterar() {
-        op = JOptionPane.showInputDialog(
-                null,
-                "Nome: " + Produto.arrayProduto.get(indice).NomeProduto + "\n"
-                + "Código\n"
-                + "O que deseja alterar?\n"
-                + "1- Nome\n"
-                + "2- Código"
-        );
-
-        if (op.equals("1")) {
-            JOptionPane.showInputDialog("Digite o nome do produto.");
-
-            //diminui o índice pra não ir pro último espaço do vetor
-            indice = -1;
+        int codigo = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto."));
+        Produto produtoAchado = null;
+        for (Produto p : Produto.arrayProduto) {
+            if (p.CodProduto == codigo) {
+                produtoAchado = p;
+                break;
+            }
         }
+        if (produtoAchado == null) {
+            JOptionPane.showMessageDialog(null, "Não foi possível encontrar!");
+        } else {
+            String op = JOptionPane.showInputDialog("O que deseja alterar?\n"
+                    + "1- Alterar nome\n"
+                    + "2- Alterar código");
+            switch (op) {
+                case "1":
+                    produtoAchado.NomeProduto = JOptionPane.showInputDialog("Digite o nome do produto.");
+                    break;
+                case "2":
+                    produtoAchado.CodProduto = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto."));
+            }
+
+        }
+
     }
 
     static void Excluir() {
